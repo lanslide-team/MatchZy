@@ -40,7 +40,10 @@ namespace MatchZy
         public Get5StatusTeam? Team2 { get; set; } = null;
 
         [JsonPropertyName("maps")]
-        public string[]? Maps { get; set; } = null;        
+        public string[]? Maps { get; set; } = null;    
+
+        [JsonPropertyName("players")]
+        public string[]? Players { get; set; } = null;    
     }
 
     public class Get5StatusTeam
@@ -141,7 +144,8 @@ namespace MatchZy
                     CurrentMapScore = team1,
                     ConnectedClients = -1,
                     Ready = ready,
-                    Side = teamSides[matchzyTeam1].ToLower()
+                    Side = teamSides[matchzyTeam1].ToLower(),
+                    Players = matchzyTeam1.teamPlayers.ToString()
                 };
 
                 get5Status.Team2 = new Get5StatusTeam
@@ -151,7 +155,8 @@ namespace MatchZy
                     CurrentMapScore = team2,
                     ConnectedClients = -1,
                     Ready = ready,
-                    Side = teamSides[matchzyTeam2].ToLower()
+                    Side = teamSides[matchzyTeam2].ToLower(),
+                    Players = matchzyTeam1.teamPlayers.ToString()
                 };
             }
 

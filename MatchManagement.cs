@@ -422,7 +422,7 @@ namespace MatchZy
             // Players are put on their teams when they join a team, which they do again after a map change. When the map does
             // not change (the match is on the current map, or the maps are vetoed first), move those already here (Get5:
             // CheckTeamsPostMatchConfigLoad).
-            if (!mapChangesOnLoad) PlacePlayersOnMatchTeams();
+            if (!mapChangesOnLoad && !enableMatchScrim) PlacePlayersOnMatchTeams();
 
             var seriesStartedEvent = new MatchZySeriesStartedEvent
             {

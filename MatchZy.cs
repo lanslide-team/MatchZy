@@ -293,6 +293,8 @@ namespace MatchZy
                     return HookResult.Continue;
                 }
 
+                if (enableMatchScrim && !matchStarted) return HookResult.Continue;
+
                 CsTeam playerTeam = GetPlayerTeam(player);
 
                 SwitchPlayerTeam(player, playerTeam);
